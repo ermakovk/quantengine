@@ -1,0 +1,40 @@
+//
+// Quant Engine prototype definition
+//
+
+syntax = "proto3";
+
+package quantengine.general;
+
+message Curve {
+	message Item {
+		double tenor = 1;
+		double value = 2;
+	}
+	repeated Item items = 1;
+}
+
+message Configuration {
+	message KeyValue {
+		string key = 1;
+		string value = 2;
+	}
+	repeated KeyValue entries = 1;
+}
+
+message Price {
+	string currency = 1;
+	double value = 2;
+}
+
+message Quote {
+	string ticker = 1;
+	string type = 2;
+	Price price = 3;
+}
+
+message DateTime {
+	int32 date = 1;
+	int32 time = 2;
+}
+

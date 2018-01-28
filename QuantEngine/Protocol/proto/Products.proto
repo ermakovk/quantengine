@@ -1,0 +1,36 @@
+syntax = "proto3";
+import "General.proto";
+
+package quanengine.products;
+
+message Product {
+	string name				= 1;
+	quantengine.general.Price  price	= 2;
+}
+
+message Derivative {
+
+	enum ExerciseType {
+		CALL = 0;
+		PUT  = 1;
+	}
+
+	enum ExerciseStyle {
+		EUROPEAN =	0;
+		AMERICAN = 1;
+		BERMUDAN = 3;
+	}
+
+	string			productClass = 1;
+	string			name = 2;
+	ExerciseType	exerciseType = 3;
+	ExerciseStyle	exerciseStyle = 4;
+	Product			underlying = 5;
+	int32			expiry = 6;
+	string			currency = 7;
+	double			spot = 8;
+	int32			inceptionDate = 9;
+}
+
+
+

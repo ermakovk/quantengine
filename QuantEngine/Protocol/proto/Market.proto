@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "General.proto";
+
+package quantengine.market;
+
+message Market {
+	
+	DateTime	marketDate = 1;
+	string		marketCurrency = 2;
+
+}
